@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Prediction Model</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind: 308' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed: 300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for("static", filename='style.css') }}">
+
+</head>
+<body>
+
+<div class="login">
+    <h1>Diagnosis Report</h1>
+    <form action="{{url_for('predict')}}" method="post">
+        <input type="text" name="radius_mean" placeholder="radius_mean" id="radius_mean" required="required" />
+        <input type="text" name="texture_mean" placeholder="texture_mean" id="texture_mean" required="required" />
+        <input type="text" name="perimeter_mean" placeholder="perimeter_mean" id="perimeter_mean" required="required" />
+        <input type="text" name="area_mean" placeholder="area_mean" id="area_mean" required="required" />
+        <input type="text" name="smoothness_mean" placeholder="smoothness_mean" id="smoothness_mean" required="required" />
+        <input type="text" name="compactness_mean" placeholder="compactness_mean" id="compactness_mean" required="required" />
+        <input type="text" name="concavity_mean" placeholder="concavity_mean" id="concavity_mean" required="required" />
+        <input type="text" name="concave points_mean" placeholder="concave points_mean" id="concave_points_mean" required="required" />
+        <input type="text" name="symmetry_mean" placeholder="symmetry_mean" id="symmetry_mean" required="required" />
+        <input type="text" name="fractal_dimension_mean" placeholder="fractal_dimension_mean" id="fractal_dimension_mean" required="required" />
+        <input type="text" name="radius_se" placeholder="radius_se" id="radius_se" required="required" />
+        <input type="text" name="texture_se" placeholder="texture_se" id="texture_se" required="required" />
+        <input type="text" name="perimeter_se" placeholder="perimeter_se" id="perimeter_se" required="required" />
+        <input type="text" name="area_se" placeholder="area_se" id="area_se" required="required" />
+        <input type="text" name="smoothness_se" placeholder="smoothness_se" id="smoothness_se" required="required" />
+        <input type="text" name="compactness_se" placeholder="compactness_se" id="compactness_se" required="required" />
+        <input type="text" name="concavity_se" placeholder="concavity_se" id="concavity_se" required="required" />
+        <input type="text" name="concave points_se" placeholder="concave points_se" id="concave_points_se" required="required" />
+        <input type="text" name="symmetry_se" placeholder="symmetry_se" id="symmetry_se" required="required" />
+        <input type="text" name="fractal_dimension_se" placeholder="fractal_dimension_se" id="fractal_dimension_se" required="required" />
+        <input type="text" name="radius_worst" placeholder="radius_worst" id="radius_worst" required="required" />
+        <input type="text" name="texture_worst" placeholder="texture_worst" id="texture_worst" required="required" />
+        <input type="text" name="perimeter_worst" placeholder="perimeter_worst" id="perimeter_worst" required="required" />
+        <input type="text" name="area_worst" placeholder="area_worst" id="area_worst" required="required" />
+        <input type="text" name="smoothness_worst" placeholder="smoothness_worst" id="smoothness_worst" required="required" />
+        <input type="text" name="compactness_worst" placeholder="compactness_worst" id="compactness_worst" required="required" />
+        <input type="text" name="concavity_worst" placeholder="concavity_worst" id="concavity_worst" required="required" />
+        <input type="text" name="concave points_worst" placeholder="concave points_worst" id="concave_points_worst" required="required" />
+        <input type="text" name="symmetry_worst" placeholder="symmetry_worst" id="symmetry_worst" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    <h1 id="Predict">
+        {{prediction_text}}
+    </h1>
+</div>
+</body>
+</html>
